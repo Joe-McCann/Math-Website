@@ -1,10 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import PermanentDrawerLeft from './components/menu.js'
+import { MainPage } from './components/menu.js'
+import { MathJaxContext } from 'better-react-mathjax';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function App() {
   return (
-    <PermanentDrawerLeft></PermanentDrawerLeft>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+        <MainPage />
+    </ThemeProvider>
   );
 }
 
